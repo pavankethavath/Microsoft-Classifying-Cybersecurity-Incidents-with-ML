@@ -71,27 +71,27 @@ The dataset has been processed into training and testing sets (`traindata_proces
 
 ### 2. **Exploratory Data Analysis (EDA)**
 - Visualized incident distributions across `Hour`, `Day`,`month` and `Category`.
-  ![EDA Visualizations](path/to/image)
-  ![EDA Visualizations](path/to/image)
-  ![EDA Visualizations](path/to/image)
-  ![EDA Visualizations](path/to/image)
+  ![EDA Visualizations](./images/hourly_incidents.png)
+  ![EDA Visualizations](./images/daywise_incidents.png)
+  ![EDA Visualizations](./images/monthly_incidents.png)
+  ![EDA Visualizations](./images/category.png)
   
 - Identified significant class imbalance in target labels (`TP`, `BP`, `FP`).
-  ![EDA Visualizations](path/to/image)
+  ![EDA Visualizations](./images/target_distribution.png)
 
 - Co-relation heatmap to understand co-linearity among the features
-  ![EDA Visualizations](path/to/image)
+  ![EDA Visualizations](./images/heatmap.png)
 ---
 
 ### 3. **Model Training and Evaluation**
 - **Baseline Models**: Logistic Regression and Decision Tree for initial benchmarks.
 - **Advanced Models**: Random Forest, Gradient Boosting, XGBoost, and LightGBM.
- ![Model Performance](path/to/image)
+ ![Model Performance](./images/all_models.png)
   
 - Addressed class imbalance with **SMOTE**, improving F1-scores.
 - Selected **XGBoost** with the top 11 features for final evaluation.
 
-  ![Model Performance](path/to/image)
+  ![Model Performance](./images/xgb_top11.png)
 
 ---
 
@@ -99,7 +99,7 @@ The dataset has been processed into training and testing sets (`traindata_proces
 - Optimized `XGBoost` hyperparameters using **RandomizedSearchCV**.
 - Tuned parameters included `max_depth`, `learning_rate`, and `n_estimators`.
 
-  ![Hyperparameter Tuning](path/to/image)
+  ![Hyperparameter Tuning](./images/hyperparameter_tuning.png)
 
 ---
 
@@ -107,7 +107,7 @@ The dataset has been processed into training and testing sets (`traindata_proces
 - Identified top features with **SHAP**, including `OrgId`, `IncidentId`, `DetectorId`, and more.
 - Used these features to improve computational efficiency and model accuracy.
 
-  ![SHAP Analysis](path/to/image)
+  ![SHAP Analysis](./images/shap.png)
 
 ---
 
@@ -115,16 +115,16 @@ The dataset has been processed into training and testing sets (`traindata_proces
 - Tested the final model on unseen data, achieving high **Macro-F1 Score**.
 - Delivered a balanced and generalizable model for real-world applications.
 
-  ![Final Evaluation](path/to/image)
+  ![Final Evaluation](./images/test_eval.png)
 
 
 ## Results
 - **Best Model**: XXGBoost with hyperparameter tuning and without SMOTE.
 - **Macro-F1 Score**:
   - Validation Set: **0.91**
-  - Test Set: **0.89**
+  - Test Set: **0.90**
 - **Feature Importance**:
-  - Top features like `OrgId`, `IncidentId`, and `DetectorId` significantly influenced predictions.
+  - Top features like `OrgId`, `IncidentId`,`alertTitle` and `DetectorId` significantly influenced predictions.
 - **Model Performance**:
   - Balanced precision and recall for all three classes (`TP`, `BP`, `FP`).
 - **Top Features**: Insights from SHAP analysis enabled computational efficiency and improved results.
