@@ -41,6 +41,16 @@ Reduce false positives and ensure timely addressing of true threats.
 ## Dataset
 The Microsoft GUIDE dataset provides comprehensive telemetry data across three hierarchies: evidence, alerts, and incidents. Key highlights include:
 
+GUIDE_train.csv (2.43 GB)
+GUIDE_test.csv (1.09 GB)
+[Kaggle Link to Dataset](https://www.kaggle.com/datasets/Microsoft/microsoft-security-incident-prediction)
+
+Sample row: 
+
+| Id | OrgId        | IncidentId | AlertId | Timestamp                | DetectorId | AlertTitle    | Category      | MitreTechniques | IncidentGrade | ActionGrouped | ActionGranular | EntityType | EvidenceRole | DeviceId | Sha256 | IpAddress  | Url | AccountSid | AccountUpn | AccountObjectId | AccountName | DeviceName | NetworkMessageId | EmailClusterId | RegistryKey | RegistryValueName | RegistryValueData | ApplicationId | ApplicationName | OAuthApplicationId | ThreatFamily | FileName | FolderPath | ResourceIdName | ResourceType | Roles | OSFamily | OSVersion | AntispamDirection | SuspicionLevel | LastVerdict | CountryCode | State | City |
+|----|--------------|------------|---------|--------------------------|-------------|----------------|---------------|------------------|---------------|---------------|----------------|------------|--------------|----------|--------|------------|-----|-------------|-------------|------------------|--------------|------------|------------------|----------------|--------------|-------------------|-------------------|----------------|----------------|--------------------|--------------|----------|------------|-----------------|--------------|-------|----------|-----------|-------------------|----------------|--------------|-------------|-------|------|
+| 0  | 180388628218 | 0          | 612     | 2024-06-04T06:05:15.000Z | 7           | InitialAccess  | NaN           | TruePositive      | NaN           | NaN           | Ip             | Related      | 98799      | 138268 | 27         | 160396 | 441377      | 673934       | 425863          | 453297       | 153085     | 529644           | NaN            | 1631         | 635               | 860               | 2251           | 3421           | 881                | NaN          | 289573   | 117668     | 3586            | NaN          | NaN   | 5        | 66        | NaN               | NaN            | 31           | 6           | 3     |
+
 - Volume: Contains over 13 million pieces of evidence.
 - Annotations: Includes more than 1 million incidents with triage labels and 26,000 incidents labeled with remediation actions.
 - Telemetry: Drawn from 6,100+ organizations, covering 441 techniques from the MITRE ATT&CK framework.
@@ -109,16 +119,7 @@ The dataset has been processed into training and testing sets (`traindata_proces
 
 
 ## Results
-
-- **Top Performing Model**: XGBoost with hyperparameter tuning and without SMOTE.
-- **Key Metrics**:  
-  - Macro-F1 Score: **  
-  - Precision and Recall: Consistent across TP, BP, FP classes.  
-- **Top Features**: Insights from SHAP analysis enabled computational efficiency and improved results.
-
-
-## Results
-- **Best Model**: XGBoost (tuned and optimized for top 11 features).
+- **Best Model**: XXGBoost with hyperparameter tuning and without SMOTE.
 - **Macro-F1 Score**:
   - Validation Set: **0.91**
   - Test Set: **0.89**
@@ -126,7 +127,7 @@ The dataset has been processed into training and testing sets (`traindata_proces
   - Top features like `OrgId`, `IncidentId`, and `DetectorId` significantly influenced predictions.
 - **Model Performance**:
   - Balanced precision and recall for all three classes (`TP`, `BP`, `FP`).
-
+- **Top Features**: Insights from SHAP analysis enabled computational efficiency and improved results.
 ---
 
 ## Technologies Used
@@ -157,3 +158,9 @@ The dataset has been processed into training and testing sets (`traindata_proces
    ```bash
    git clone <repository_url>
    cd <repository_directory>
+
+ ## Acknowledgments
+- Microsoft for providing the GUIDE dataset.
+- Open-source contributors of libraries and tools used in this project.
+- The data science and cybersecurity communities for inspiration and knowledge.
+
