@@ -110,9 +110,9 @@ The dataset has been processed into training and testing sets (`traindata_proces
 
 ## Results
 
-- **Top Performing Model**: XGBoost with hyperparameter tuning and SMOTE.
+- **Top Performing Model**: XGBoost with hyperparameter tuning and without SMOTE.
 - **Key Metrics**:  
-  - Macro-F1 Score: *High*  
+  - Macro-F1 Score: **  
   - Precision and Recall: Consistent across TP, BP, FP classes.  
 - **Top Features**: Insights from SHAP analysis enabled computational efficiency and improved results.
 
